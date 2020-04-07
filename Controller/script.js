@@ -20,24 +20,24 @@ async function loadDoc() {
     url + "?email=osvaldofabricio11@gmail.com&name=Osvaldo Carrillo"
   );
   var tokenData = await response.json();
-  console.log("Teh token => ", tokenData);
-  var statusURL = true;
-  do {
-    var dataPeople = await fetchAPI(url + "/data?token=" + tokenData.token);
+  //   console.log("Teh token => ", tokenData);
+  //   var statusURL = true;
+  //   do {
+  //     var dataPeople = await fetchAPI(url + "/data?token=" + tokenData.token);
 
-    const waitFor = (delay) =>
-      new Promise((resolve) => setTimeout(resolve, delay));
+  //     const waitFor = (delay) =>
+  //       new Promise((resolve) => setTimeout(resolve, delay));
 
-    await waitFor(500);
-    if (dataPeople.status != 400) {
-      console.log(dataPeople.status);
-      var dataJson = await dataPeople.json();
-      people.push(dataJson);
-      console.log(dataJson);
-    } else {
-      statusURL = false;
-    }
-  } while (statusURL);
+  //     await waitFor(500);
+  //     if (dataPeople.status != 400) {
+  //       console.log(dataPeople.status);
+  //       var dataJson = await dataPeople.json();
+  //       people.push(dataJson);
+  //       console.log(dataJson);
+  //     } else {
+  //       statusURL = false;
+  //     }
+  //   } while (statusURL);
 }
 
 function fetchAPI(url) {
